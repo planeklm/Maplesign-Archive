@@ -1,0 +1,435 @@
+:root {
+  --bg-main: #101010;
+  --bg-secondary: #f23868;
+  --grey-dark: #191919;
+}
+
+.container {
+  max-width: 1536px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5em;
+  padding-right: 0.5em;
+}
+disabled {
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+@media (max-width: 1536px) {
+  .container {
+    max-width: 1280px;
+  }
+
+  .frontSection {
+    flex: 0.25;
+  }
+
+  .plans > h2 {
+    transform: translateY(-17em);
+  }
+}
+
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1024px;
+  }
+
+  .plans > h2 {
+    transform: translateY(-10.5em);
+  }
+}
+
+@media (max-width: 1024px) {
+  .container {
+    max-width: 768px;
+  }
+  .plans > h2 {
+    margin-bottom: -3.5em;
+  }
+
+  .about-us > h2 {
+    margin-top: 3.5em;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    overflow-x: hidden;
+  }
+  .container {
+    max-width: 640px;
+  }
+  .navbar {
+    padding: 0;
+    justify-content: end;
+    flex: 0.04;
+  }
+
+  .links {
+    display: none;
+    background-color: rgba(25, 25, 25, 0.5);
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    animation: fadeInFromAbove 0.5s;
+  }
+
+  .links > a {
+    display: block;
+  }
+  #navMenu {
+    z-index: 2;
+    display: block;
+    margin-right: 0;
+  }
+
+  .aboutustext {
+    width: 45em;
+  }
+
+  .plans > h2 {
+    margin-bottom: -3.5em;
+  }
+
+  .cards {
+    overflow-x: hidden;
+  }
+
+  .social-cards {
+    overflow-x: hidden;
+  }
+}
+.nav-active {
+  display: flex;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 60%;
+}
+
+@media (max-width: 640px) {
+  .container {
+    max-width: 475px;
+  }
+
+  .frontSection > h1 {
+    font-size: 6em;
+  }
+
+  .frontSection > p {
+    width: 25em;
+  }
+
+  .about-us > h2,
+  .plans > h2,
+  .socials > h2 {
+    font-size: 1.7em;
+  }
+
+  .card > h3 {
+    font-size: 1.4em;
+  }
+
+  .frontSection > p,
+  .about-us > h3,
+  .supportEmail > h4 {
+    font-size: 1.2em;
+  }
+
+  .aboutustext {
+    width: 35em;
+  }
+
+  .aboutustext > p,
+  #read-tos,
+  .about-us > a,
+  .card > ul > li,
+  .tosTag,
+  .purchase,
+  .sCard > a,
+  .supportEmail > a,
+  .supportEmail > p,
+  footer > p {
+    font-size: 1em;
+  }
+
+  .sCard > h3 {
+    font-size: 1.1em;
+  }
+
+  .sCard {
+    width: 30em;
+  }
+
+  .sLogo > img {
+    width: 2.5em;
+  }
+
+  .plans > h2 {
+    margin-bottom: -1em;
+  }
+}
+
+@media (max-width: 475px) {
+  .container {
+    max-width: 455px;
+  }
+
+  .links > a {
+    font-size: 1em;
+  }
+
+  .frontSection {
+    flex: 0.15;
+  }
+
+  .frontSection > h1 {
+    font-size: 5em;
+  }
+
+  .about-us > h2,
+  .plans > h2,
+  .socials > h2 {
+    font-size: 1.7em;
+  }
+
+  .card > h3 {
+    font-size: 1.4em;
+  }
+
+  .card:nth-last-of-type(1) {
+    transform: translateX(30em);
+  }
+  .card:nth-last-of-type(2) {
+    transform: translateX(-30em);
+  }
+
+  .frontSection > p,
+  .about-us > h3,
+  .supportEmail > h4 {
+    font-size: 1.1em;
+  }
+
+  .frontSection > p {
+    width: 25em;
+  }
+
+  .aboutustext {
+    width: 31em;
+  }
+  .cards {
+    gap: 6em;
+  }
+
+  .sCard > h3 {
+    font-size: 1.1em;
+  }
+
+  .sCard,
+  .card {
+    width: 27em;
+  }
+
+  .sCard:nth-of-type(1) {
+    transform: translateX(-30em);
+  }
+
+  .sCard:nth-of-type(2) {
+    transform: translateX(30em);
+  }
+
+  .sLogo > img {
+    width: 2.5em;
+  }
+
+  .plans > h2 {
+    margin-bottom: -3.5em;
+  }
+}
+
+@media (max-width: 455px) {
+  .container {
+    width: 375px;
+  }
+
+  .plans {
+    flex: 0.39;
+  }
+
+  .socials {
+    flex: 0.3;
+  }
+  .navbar {
+    flex: 0.02;
+  }
+  #navMenu {
+    margin-right: -0.8em;
+  }
+
+  .about-us {
+    flex: 0.15;
+  }
+  .frontSection > h1 {
+    font-size: 4em;
+  }
+
+  .frontSection > p,
+  .about-us > h3,
+  .supportEmail > h4 {
+    font-size: 0.9em;
+  }
+
+  .sCard > h3 {
+    font-size: 1em;
+  }
+
+  .aboutustext > p,
+  #read-tos,
+  .about-us > a,
+  .card > ul > li,
+  .tosTag,
+  .purchase,
+  .sCard > a,
+  .supportEmail > a,
+  .supportEmail > p,
+  footer > p {
+    font-size: 0.8em;
+  }
+
+  #read-tos {
+    width: 30em;
+  }
+
+  .aboutustext {
+    width: 25em;
+  }
+
+  .about-us > h2,
+  .plans > h2,
+  .socials > h2 {
+    font-size: 1.5em;
+  }
+  .card > h3 {
+    font-size: 1.3em;
+  }
+
+  .sCard,
+  .card {
+    width: 23em;
+  }
+}
+
+@media (max-width: 430px) {
+  .container {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 400px) {
+  .container {
+    max-width: 375px;
+  }
+
+  #navMenu {
+    margin-right: 0em;
+  }
+}
+
+@media (max-width: 375px) {
+  .container {
+    max-width: 320px;
+  }
+  .frontSection > p {
+    width: 25em;
+    font-size: 0.8em;
+  }
+
+  .plans {
+    flex: 0.37;
+  }
+
+  .about-us {
+    flex: 0.25;
+  }
+
+  .socials {
+    flex: 0.2;
+  }
+
+  .sCard,
+  .card {
+    width: 22em;
+  }
+
+  #navMenu {
+    margin-right: 0;
+  }
+
+  footer {
+    padding-bottom: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .container {
+    max-width: 100%;
+  }
+  .frontSection > p {
+    width: 23em;
+  }
+
+  .links {
+    right: 0;
+  }
+
+  .sCard,
+  .card {
+    width: 19em;
+  }
+
+  .frontSection > h1 {
+    font-size: 3.5em;
+  }
+
+  .frontSection > p {
+    width: 25em;
+    font-size: 0.7em;
+  }
+
+  .about-us > h3,
+  .supportEmail > h4 {
+    font-size: 0.9em;
+  }
+
+  .link > a,
+  .sCard > h3 {
+    font-size: 0.9em;
+  }
+
+  footer {
+    padding-bottom: 1em;
+  }
+
+  #read-tos {
+    width: 25em;
+  }
+
+  .aboutustext {
+    width: 21em;
+  }
+
+  .about-us > h2,
+  .plans > h2,
+  .socials > h2 {
+    font-size: 1.3em;
+  }
+  .card > h3 {
+    font-size: 1.2em;
+  }
+  .frontSection {
+    flex: 0.16;
+  }
+}

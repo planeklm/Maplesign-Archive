@@ -1,0 +1,135 @@
+<!DOCTYPE html><html lang="en"><head>
+    <meta charset="UTF-8" name="description" content="The most affordable signing service">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600&amp;display=swap" rel="stylesheet">
+    <script src="js/bitcart.js"></script>
+    <script src="js/axios.min.js"></script>
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/home-responsive.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/lightmode.css">
+    <title>Home</title>
+    <meta property="og:title" content="MapleSign">
+    <meta property="og:description" content="MapleSign.ca offers Apple Developer Certificates for application signing, enabling hassle-free sideloading of iOS apps. Empower your iOS experience with us today.">
+    <meta property="og:url" content="https://maplesign.ca/">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image" content="images/maplesign.png">
+  </head>
+  <body>
+    <nav class="navbar container">
+      <div class="links nav-closed ">
+          <a href="/" id="navWhyUs">Why us</a>
+          <a href="/">Terms of Service</a>
+          <a href="/#Socials">Socials</a>
+          <a href="/#Plans">Purchase</a>
+      </div>
+        <img id="navMenu" src="images/hamburger-menu.svg" alt="hamburger menu for opening the nav links">
+    </nav>
+
+    <section class="frontSection container notNav">
+      <h1>Maple<span>Sign</span></h1>
+      <p> The most affordable signing service. Starting at just <span>$9.25</span></p>
+    </section>
+    <section id="Plans" class="plans container notNav">
+      <h2>Plans</h2>
+      <div class="cards">
+          <div class="card">
+              <h3 id="plansBasicTag">Basic Plan - $9.25</h3>
+              <ul>
+                  <li>1 Year Plan</li>
+                  <li>Certificate files (.p12 &amp; .mobileprovison)</li>
+                  <li>Supports all entitlements</li>
+                  <li>Includes 1 device iPhone, iPad or AppleTV</li>
+                  <li>No revoke protection</li>
+              </ul>
+              <a class="purchase" href="https://github.com/planeklm/">Purchase</a>
+              <a class="purchase" id="basic" onclick="purchaseBasic()">Cryptocurrency</a>
+          </div>
+          <div class="card">
+              <h3 id="plansProTag">Pro Plan - $19.99</h3>
+              <ul>
+                  <li>1 Year Plan</li>
+                  <li>Certificate files (.p12 &amp; .mobileprovison)</li>
+                  <li>Supports all entitlements</li>
+                  <li>Includes 1 iPhone, 1 iPad, 1 AppleTV, 1 AVP</li>
+                  <li>Revoke protection</li>
+              </ul>
+              <a class="purchase" href="https://github.com/planeklm/">Purchase</a>
+              <a class="purchase" id="basic" onclick="purchasePro()">Cryptocurrency</a>
+          </div>
+       </div>
+  </section>
+    <section class="about-us container notNav">
+        <h2 id="aboutUsH2">About Us</h2>
+        <h3 id="aboutUsH3">Taking your iOS Experience to the next level</h3>
+        <div class="about-us-textbox">
+            <div class="aboutustext">
+                <p id="aboutUsP">
+Tired of AppStore limitations? Look no further, here at
+MapleSign we offer iOS Developer Certificates for iOS devices, that allows you to install unlimited apps with
+notifications and allows workable VPNs for 1 year. With us providing this
+service for almost 2 years you can rely on us for all your sideloading needs. (We are not
+affiliated with Apple in any way)
+                </p>            </div>
+        </div>
+        <p id="read-tos">Please read our Terms of Service &amp; Refund Policy before purchasing</p>
+        <a id="tosLink" href="/tos">Terms of Service &amp; Refund Policy</a>
+      
+    </section>
+    <section class="socials container notNav">
+      <h2 id="Socials">Contact Us</h2>
+      <div class="social-cards">
+        <div class="sCard">
+          <div class="sLogo">
+            <img id="twitter" src="images/twitter.svg" alt="twitter logo ">
+          </div>
+          <h3>@MapleSign</h3>
+          <a id="socialXFollowTag" href="https://twitter.com/MapleSign">Follow Us</a>
+        </div>
+        <div class="sCard">
+          <div class="sLogo">
+            <img id="discord" src="images/discord.svg" alt="discord logo">
+          </div>
+          <h3 id="socialDiscordH3">MapleSign Discord Server</h3>
+          <a id="socialDiscordJoinTag" href="https://discord.gg/nPyHBBBdKN">Join</a>
+        </div>
+      </div>
+      <div class="supportEmail notNav">
+        <h4 id="supportEmailH4">Support Email</h4>
+        <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="186b6d6868776a6c58757968747d6b717f76367b79">[email�&nbsp;protected]</a></p>
+        <a id="supportMailTag" href="/cdn-cgi/l/email-protection#c0b3b5b0b0afb2b480ada1b0aca5b3a9a7aeeea3a1">Email Us</a>
+      </div>
+    </section>
+    <footer><p>(c) MapleSign LLC 2022-2024</p></footer>
+    <footer><p>archived by planeklm</p></footer>
+    <script data-cfasync="false" src="js/email-decode.min.js"></script><script src="js/script.js"></script>
+  
+  <script>
+    function purchaseBasic() {
+      var req = axios({
+        method: 'post',
+        url: '/api/invoice',
+        data: {
+          type: 0,
+        }
+      }).then(req => {
+        window.bitcart.showInvoice(req.data.invoice)
+      });
+    };
+    function purchasePro() {
+      var req = axios({
+        method: 'post',
+        url: '/api/invoice',
+        data: {
+          type: 1,
+        }
+      }).then(req => {
+        window.bitcart.showInvoice(req.data.invoice)
+      });
+    };
+  </script>
+
+</body></html>

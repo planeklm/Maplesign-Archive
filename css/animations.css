@@ -1,0 +1,21 @@
+@keyframes fadeInFromAbove {
+  from {
+    opacity: 0;
+    transform: translateY(-1.5em);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0em);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

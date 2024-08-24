@@ -1,0 +1,45 @@
+:root {
+  --bg-main: #101010;
+  --bg-light-main: white;
+  --light-grey: #f3f3f3;
+  --bg-secondary: #f23868;
+  --bg-light-secondary: #38b3f2;
+  --grey-dark: #191919;
+}
+
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: var(--bg-light-main);
+    color: var(--bg-main);
+  }
+
+  .links > a {
+    color: var(--bg-main);
+  }
+
+  .card,
+  .sCard,
+  .reasons {
+    background-color: var(--light-grey);
+  }
+  .purchase,
+  .sCard > a,
+  .supportEmail > a {
+    background-color: var(--bg-light-secondary);
+  }
+
+  .about-us > a,
+  .links > a:nth-child(4),
+  .supportEmail > p,
+  .social-link,
+  .content > a,
+  span {
+    color: var(--bg-light-secondary) !important;
+  }
+
+  @media (max-width: 768px) {
+    .links {
+      background-color: rgba(243, 243, 243, 0.5);
+    }
+  }
+}
